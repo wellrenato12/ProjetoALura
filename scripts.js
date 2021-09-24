@@ -271,6 +271,10 @@ function jogar() {
     let divResultado = document.getElementById("resultado")
     let atributoSelecionado = obtemAtributoSelecionado()
 
+    while(atributoSelecionado.checked == ''){
+        document.getElementById('btnJogar').disabled = true
+    }
+
     if (cartaJogador.atributos[atributoSelecionado] > cartaMaquina.atributos[atributoSelecionado]) {
         htmlResultado = '<p class="resultado-final">Venceu</p>'
         pontosJogador++
